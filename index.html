@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Изчисление на съотношение</title>
+    <script type="text/javascript">
+        function calculate() {
+            // Вземи стойностите от полетата
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+            
+            // Изчисли резултатите
+            let sum = (num1 + num2).toFixed(3);
+            let division = ((num2 / num1) * 100).toFixed(2);
+            let c18 = (num1 / 20).toFixed(3)
+            let d18 = (2.328 / c18).toFixed(3)
+            let e18 = (1297 * d18).toFixed(0)
+            let product = (c18 - 0.00166 * (1397-e18)).toFixed(3);
+            let koeficient = (2.328 / product).toFixed(3)
+            let oborots = (1297 * koeficient).toFixed(0)
+           
+            // Показване на резултатите
+            document.getElementById('resultSum').innerText = 'Общ грамаж: ' + sum;
+            document.getElementById('resultDivision').innerText = 'Съотношение: ' + division;
+            document.getElementById('resultProduct').innerText = 'Грамаж за въвеждане: ' + product;
+            document.getElementById('resultOborots').innerText = 'Изчислени обороти: ' + oborots;
+
+            
+        } function reset(){
+
+        document.getElementById('num1').value = '';
+        document.getElementById('num2').value = ''
+        document.getElementById('resultSum').innerText = ''
+        document.getElementById('resultDivision').innerText = ''
+        document.getElementById('resultProduct').innerText = ''
+        document.getElementById('resultOborots').innerText = ''
+       }
+    </script>
+    
+</head>
+<body>
+    
+    <h1>Въведи измерените</h1>
+    <input type="number" id="num1" placeholder="Смола">
+    <input type="number" id="num2" placeholder="Втвърдител">
+    <br><br><br>
+    <button onclick="calculate()">Изчисли</button>
+
+    <h2>Резултати:</h2>
+    <p id="resultSum"></p>
+    <p id="resultDivision"></p>
+    <p id="resultProduct"></p>
+    <p id="resultOborots"></p>
+    <button onclick="reset()">Изчисти</button>
+    <br><br>
+    <img src="image.jpg" alt="Girl in a jacket" style="width:360px;height:300px;">
+
+<script></script>
+</body>
+</html>
